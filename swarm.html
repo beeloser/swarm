@@ -29,10 +29,17 @@
     <script type="text/javascript">
 
       function initialize() {
+<!--
         var defaultCenter = new google.maps.LatLng(53.569253, -2.887784);
         var defaultZoom = 2;
         var tableId = '1FarqFVnXOAomZug3XYB82b2HuvfSmOocbDVLAYQM';
         var locationColumn = 'Postcode';
+        var geocoder = new google.maps.Geocoder();
+-->        
+        var defaultCenter = new google.maps.LatLng(10, 10);
+        var defaultZoom = 2;
+        var tableId = '1FarqFVnXOAomZug3XYB82b2HuvfSmOocbDVLAYQM';
+        var locationColumn = 'lat';
         var geocoder = new google.maps.Geocoder();
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
