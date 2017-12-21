@@ -51,12 +51,13 @@ html, body, #map-canvas {
     
         var map = new google.maps.Map(document.getElementById('map-canvas'),
         {
-          map.style.width = '1000px',
-          map.style.height = '600px',
           center: defaultCenter,
           zoom: defaultZoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+        
+        map.style.width = '1000px';
+        map.style.height = '600px';
 
         var layer = new google.maps.FusionTablesLayer({
           map: map,
