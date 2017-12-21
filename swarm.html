@@ -63,6 +63,7 @@
               map.setCenter(results[0].geometry.location);
               map.setZoom(10);
 
+<!--             
               // OPTIONAL: run spatial query to find results within bounds.
               var sw = map.getBounds().getSouthWest();
               var ne = map.getBounds().getNorthEast();
@@ -71,9 +72,11 @@
               layer.setOptions({
                 query: {
                   select: locationColumn,
-                  from: tableId                
+                  from: tableId,
+                  where: where
                 }
               });
+-->              
             } else {
               window.alert('Postcode could not be geocoded: ' + status);
             }
