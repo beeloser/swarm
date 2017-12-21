@@ -63,24 +63,6 @@
               map.setCenter(results[0].geometry.location);
               map.setZoom(10);
 
-              // OPTIONAL: run spatial query to find results within bounds.
-              var sw = map.getBounds().getSouthWest();
-              var ne = map.getBounds().getNorthEast();
-              var where = 'ST_INTERSECTS(' + locationColumn +
-                  ', RECTANGLE(LATLNG' + sw + ', LATLNG' + ne + '))';
-              layer.setOptions({
-                query: {
-                  select: locationColumn,
-                  from: tableId
-                  <!--,
-                  where: where
-                  -->
-                }
-              });
-            } else {
-              window.alert('Postcode could not be geocoded: ' + status);
-            }
-          });
         };
 
         google.maps.event.addDomListener(document.getElementById('search'),
