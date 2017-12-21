@@ -52,8 +52,10 @@ html, body, #map-canvas {
     var mapDiv = document.getElementById('map-canvas');
     mapDiv.style.width = '1000px';
     mapDiv.style.height = '600px';
-        
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
+
+        <!-- var map = new google.maps.Map(document.getElementById('map-canvas'), -->
+                                      
+        var map = new google.maps.Map(mapDiv,
         {
           center: defaultCenter,
           zoom: defaultZoom,
