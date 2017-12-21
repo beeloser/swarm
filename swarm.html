@@ -35,19 +35,11 @@
       function initialize() {
 
         var defaultCenter = new google.maps.LatLng(53.569253, -2.887784);
-        var defaultZoom = 6;
+        var defaultZoom = 10;
         var tableId = '1IwOpZsBRl7kNpHhrsMskrbkHhN4uHt9Wq26LmQyV';
         var locationColumn = 'Postcode';
         var geocoder = new google.maps.Geocoder();
-  
-<!--  
-        var defaultCenter = new google.maps.LatLng(10, 10);
-        var defaultZoom = 2;
-        var tableId = '1FarqFVnXOAomZug3XYB82b2HuvfSmOocbDVLAYQM';
-        var locationColumn = 'lat';
-        var geocoder = new google.maps.Geocoder();
--->
-  
+    
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
           center: defaultCenter,
           zoom: defaultZoom,
@@ -55,11 +47,16 @@
         });
 
         var layer = new google.maps.FusionTablesLayer({
+          map: map,
           query: {
             select: locationColumn,
             from: tableId
+            where: ""
           },
-          map: map
+          options: {
+             styleId: 2,
+             templateId: 2
+           }
         });
 
         var zoomToAddress = function() {
