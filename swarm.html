@@ -48,7 +48,11 @@ html, body, #map-canvas {
         var tableId = '1FarqFVnXOAomZug3XYB82b2HuvfSmOocbDVLAYQM';
         var locationColumn = 'Postcode';
         var geocoder = new google.maps.Geocoder();
-    
+        
+    var mapDiv = document.getElementById('map-canvas');
+    mapDiv.style.width = '1000px';
+    mapDiv.style.height = '600px';
+        
         var map = new google.maps.Map(document.getElementById('map-canvas'),
         {
           center: defaultCenter,
@@ -56,8 +60,6 @@ html, body, #map-canvas {
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
         
-        map.style.width = '1000px';
-        map.style.height = '600px';
 
         var layer = new google.maps.FusionTablesLayer({
           map: map,
