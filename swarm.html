@@ -49,7 +49,10 @@ html, body, #map-canvas {
         var locationColumn = 'Postcode';
         var geocoder = new google.maps.Geocoder();
     
-        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            map.style.width = '1000px';
+            map.style.height = '600px';                              
+        {
           center: defaultCenter,
           zoom: defaultZoom,
           mapTypeId: google.maps.MapTypeId.ROADMAP
